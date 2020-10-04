@@ -23,4 +23,4 @@ To install `node`, `newman` and the `htmlextra` packages together, use this comm
 In order to enable this reporter, specify `htmlextra` in Newman's `-r` or `--reporters` option.
 The following command will run `PomonaAppReseller.collection.json` with `graphql-stage.environment.json` as the environment variables, and create a new report in the `./newman` directory, if the directory does not exist, it will be created as part of the Newman run.
 
-`$ newman run PomonaAppReseller.collection.json -e graphql-stage.environment.json -r htmlextra`
+`$ newman run Booking.postman_collection.json -e Booking.postman_environment.json -r htmlextra`

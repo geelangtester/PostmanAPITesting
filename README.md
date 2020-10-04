@@ -1,4 +1,4 @@
-# PostmanAPITesting
+# How to run postman collection in command-line interface
 
 To be able to run Postman collection in command-line interface, you must have Newman installed.
 The easiest way to install Newman is using NPM. If you have Node.js installed, it is most likely that you have NPM installed as well.

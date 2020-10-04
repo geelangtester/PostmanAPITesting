@@ -1,0 +1,1159 @@
+{
+	"info": {
+		"_postman_id": "49189997-fedf-40e4-9c8e-a8093fe99bfd",
+		"name": "Booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TestScript code 200",
+			"item": [
+				{
+					"name": "CreateToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c2c95dad-b7a6-4d2d-a26c-5ce1ba8dde86",
+								"exec": [
+									"//Mendefinisikan skema response\r",
+									"const authSchema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"token\": {\r",
+									"            \"type\": \"string\"\r",
+									"        }\r",
+									"    },\r",
+									"    \"required\": [\r",
+									"        \"token\"\r",
+									"    ]\r",
+									"};\r",
+									"\r",
+									"//Validasi response skema\r",
+									"pm.test(\"Schema validation\", function () {\r",
+									"    pm.response.to.have.jsonSchema(authSchema);\r",
+									"});\r",
+									"\r",
+									"//Get variable token dan set menjadi collection variable untuk digunakan di request yang lain.\r",
+									"const response = pm.response.json();\r",
+									"const token = response.token;\r",
+									"pm.collectionVariables.set(\"token\", token);\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"password\" : \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateBooking",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "7046b9df-97d7-40f8-80b6-0084e0451554",
+								"exec": [
+									"pm.collectionVariables.set(\"price\", Number(pm.variables.replaceIn(\"{{$randomCreditCardMask}}\")));\r",
+									"pm.collectionVariables.set(\"firstName\", pm.variables.replaceIn(\"{{$randomFirstName}}\"));\r",
+									"pm.collectionVariables.set(\"lastName\", pm.variables.replaceIn(\"{{$randomLastName}}\"));\r",
+									"\r",
+									"const boolean = [false, true];\r",
+									"const random = Math.floor(Math.random() * boolean.length);\r",
+									"pm.collectionVariables.set(\"boolean\", boolean[random])"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "b695c99a-0beb-479d-94a8-925a7c8fcae6",
+								"exec": [
+									"const response = pm.response.json();\r",
+									"const createBookingSchema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"bookingid\": {\r",
+									"            \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"booking\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"properties\": {\r",
+									"                \"firstname\": {\r",
+									"                    \"type\": \"string\"\r",
+									"                },\r",
+									"                \"lastname\": {\r",
+									"                    \"type\": \"string\"\r",
+									"                },\r",
+									"                \"totalprice\": {\r",
+									"                    \"type\": \"integer\"\r",
+									"                },\r",
+									"                \"depositpaid\": {\r",
+									"                    \"type\": \"boolean\"\r",
+									"                },\r",
+									"                \"bookingdates\": {\r",
+									"                    \"type\": \"object\",\r",
+									"                    \"properties\": {\r",
+									"                        \"checkin\": {\r",
+									"                            \"type\": \"string\"\r",
+									"                        },\r",
+									"                        \"checkout\": {\r",
+									"                            \"type\": \"string\"\r",
+									"                        }\r",
+									"                    },\r",
+									"                    \"required\": [\r",
+									"                        \"checkin\",\r",
+									"                        \"checkout\"\r",
+									"                    ]\r",
+									"                },\r",
+									"                \"additionalneeds\": {\r",
+									"                    \"type\": \"string\"\r",
+									"                }\r",
+									"            },\r",
+									"            \"required\": [\r",
+									"                \"firstname\",\r",
+									"                \"lastname\",\r",
+									"                \"totalprice\",\r",
+									"                \"depositpaid\",\r",
+									"                \"bookingdates\",\r",
+									"                \"additionalneeds\"\r",
+									"            ]\r",
+									"        }\r",
+									"    },\r",
+									"    \"required\": [\r",
+									"        \"bookingid\",\r",
+									"        \"booking\"\r",
+									"    ]\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Schema validation\", function () {\r",
+									"    pm.response.to.have.jsonSchema(createBookingSchema);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Get book id\", function () {\r",
+									"    pm.collectionVariables.set(\"bookIdCreate\", response.bookingid)\r",
+									"});\r",
+									"\r",
+									"let price = pm.collectionVariables.get(\"price\");\r",
+									"let boolean = pm.collectionVariables.get(\"boolean\");\r",
+									"let firstName = pm.collectionVariables.get(\"firstName\");\r",
+									"let lastName = pm.collectionVariables.get(\"lastName\");\r",
+									"\r",
+									"\r",
+									"let field = [\r",
+									"    \"firstname\",\r",
+									"    \"lastname\",\r",
+									"    \"totalprice\",\r",
+									"    \"depositpaid\",\r",
+									"]\r",
+									"\r",
+									"let fieldvalue = [\r",
+									"    firstName,\r",
+									"    lastName,\r",
+									"    price,\r",
+									"    boolean\r",
+									"]\r",
+									"\r",
+									"for (let fieldArray in field){\r",
+									"    pm.test(`Check field ${field[fieldArray]}`, function(){\r",
+									"        pm.expect(response.booking[field[fieldArray]]).to.equals(fieldvalue[fieldArray])\r",
+									"    })\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"{{firstName}}\",\r\n    \"lastname\": \"{{lastName}}\",\r\n    \"totalprice\": {{price}},\r\n    \"depositpaid\": {{boolean}},\r\n    \"bookingdates\": {\r\n        \"checkin\": \"2018-01-01\",\r\n        \"checkout\": \"2018-01-02\"\r\n    },\r\n    \"additionalneeds\": \"Breakfast\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/booking",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBookingIds",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7698f51a-42aa-46cb-8d2c-15a69872eb70",
+								"exec": [
+									"\r",
+									"//Get the response body as a JavaScript object\r",
+									"const response = pm.response.json();\r",
+									"\r",
+									"//Mendefinisikan skema response\r",
+									"const bookingSchema = {\r",
+									"    \"type\": \"array\",\r",
+									"    \"items\": [\r",
+									"        {\r",
+									"            \"type\": \"object\",\r",
+									"            \"properties\": {\r",
+									"                \"bookingid\": {\r",
+									"                    \"type\": \"integer\"\r",
+									"                }\r",
+									"            },\r",
+									"            \"required\": [\r",
+									"                \"bookingid\"\r",
+									"            ]\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"//Mendefiniskan bookId skema\r",
+									"const bookSchema = {\r",
+									"    \"items\": [\r",
+									"        {\r",
+									"            \"type\": \"object\",\r",
+									"            \"properties\": {\r",
+									"                \"bookingid\": {\r",
+									"                    \"type\": \"integer\"\r",
+									"                }\r",
+									"            },\r",
+									"            \"required\": [\r",
+									"                \"bookingid\"\r",
+									"            ]\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"//Validasi response skema\r",
+									"\r",
+									"pm.test(\"Schema validation\", function () {\r",
+									"    pm.response.to.have.jsonSchema(bookingSchema);\r",
+									"});\r",
+									"\r",
+									"//Validasi semua bookid didalam array.\r",
+									"for (let bookId in response) {\r",
+									"    pm.test(\"BookId schema validation\", function () {\r",
+									"        pm.expect(response[bookId]).to.have.jsonSchema(bookSchema)\r",
+									"    });\r",
+									"    \r",
+									"//Cari book dengan id 10 dan menjadikanya variable untuk digunakan di response lain.\r",
+									"    if (response[bookId].bookingid == 10) {\r",
+									"        pm.test(\"Get bookid 10\", function () {\r",
+									"            pm.collectionVariables.set(\"bookId\", response[bookId].bookingid)\r",
+									"        });\r",
+									"    }\r",
+									"\r",
+									"}\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/booking",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"booking"
+							],
+							"query": [
+								{
+									"key": "firstname",
+									"value": "{{firstName}}",
+									"disabled": true
+								},
+								{
+									"key": "lastname",
+									"value": "{{lastName}}",
+									"disabled": true
+								},
+								{
+									"key": "checkin",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "checkout",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBookingId (with query params)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eb2a3870-581a-4a4a-9602-a055dba02564",
+								"exec": [
+									"\r",
+									"//Get the response body as a JavaScript object\r",
+									"const response = pm.response.json();\r",
+									"\r",
+									"//Mendefinisikan skema response\r",
+									"const bookingSchema = {\r",
+									"    \"type\": \"array\",\r",
+									"    \"items\": [\r",
+									"        {\r",
+									"            \"type\": \"object\",\r",
+									"            \"properties\": {\r",
+									"                \"bookingid\": {\r",
+									"                    \"type\": \"integer\"\r",
+									"                }\r",
+									"            },\r",
+									"            \"required\": [\r",
+									"                \"bookingid\"\r",
+									"            ]\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"//Mendefiniskan bookId skema\r",
+									"const bookSchema = {\r",
+									"    \"items\": [\r",
+									"        {\r",
+									"            \"type\": \"object\",\r",
+									"            \"properties\": {\r",
+									"                \"bookingid\": {\r",
+									"                    \"type\": \"integer\"\r",
+									"                }\r",
+									"            },\r",
+									"            \"required\": [\r",
+									"                \"bookingid\"\r",
+									"            ]\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"//Validasi response skema\r",
+									"\r",
+									"pm.test(\"Schema validation\", function () {\r",
+									"    pm.response.to.have.jsonSchema(bookingSchema);\r",
+									"});\r",
+									"\r",
+									"//Validasi semua bookid didalam array.\r",
+									"for (let bookId in response) {\r",
+									"    pm.test(\"BookId schema validation\", function () {\r",
+									"        pm.expect(response[bookId]).to.have.jsonSchema(bookSchema)\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/booking?firstname={{firstName}}&lastname={{lastName}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"booking"
+							],
+							"query": [
+								{
+									"key": "firstname",
+									"value": "{{firstName}}"
+								},
+								{
+									"key": "lastname",
+									"value": "{{lastName}}"
+								},
+								{
+									"key": "checkin",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "checkout",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBooking",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "48aef25f-042f-49e7-a368-ddbe9d63f1fe",
+								"exec": [
+									"//Get the response body as a JavaScript object\r",
+									"const response = pm.response.json();\r",
+									"\r",
+									"const idDetailSchema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"firstname\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"lastname\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"totalprice\": {\r",
+									"            \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"depositpaid\": {\r",
+									"            \"type\": \"boolean\"\r",
+									"        },\r",
+									"        \"bookingdates\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"properties\": {\r",
+									"                \"checkin\": {\r",
+									"                    \"type\": \"string\"\r",
+									"                },\r",
+									"                \"checkout\": {\r",
+									"                    \"type\": \"string\"\r",
+									"                }\r",
+									"            },\r",
+									"            \"required\": [\r",
+									"                \"checkin\",\r",
+									"                \"checkout\"\r",
+									"            ]\r",
+									"        }\r",
+									"    },\r",
+									"    \"required\": [\r",
+									"        \"firstname\",\r",
+									"        \"lastname\",\r",
+									"        \"totalprice\",\r",
+									"        \"depositpaid\",\r",
+									"        \"bookingdates\"\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Schema validation\", function () {\r",
+									"    pm.response.to.have.jsonSchema(idDetailSchema);\r",
+									"});\r",
+									"\r",
+									"let price = pm.collectionVariables.get(\"price\");\r",
+									"let boolean = pm.collectionVariables.get(\"boolean\");\r",
+									"let firstName = pm.collectionVariables.get(\"firstName\");\r",
+									"let lastName = pm.collectionVariables.get(\"lastName\");\r",
+									"\r",
+									"\r",
+									"let field = [\r",
+									"    \"firstname\",\r",
+									"    \"lastname\",\r",
+									"    \"totalprice\",\r",
+									"    \"depositpaid\",\r",
+									"];\r",
+									"\r",
+									"let fieldvalue = [\r",
+									"    firstName,\r",
+									"    lastName,\r",
+									"    price,\r",
+									"    boolean\r",
+									"];\r",
+									"\r",
+									"for (let fieldArray in field){\r",
+									"    pm.test(`Check field ${field[fieldArray]}`, function(){\r",
+									"        pm.expect(response[field[fieldArray]]).to.equals(fieldvalue[fieldArray])\r",
+									"    });\r",
+									"};"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/booking/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"booking",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{bookIdCreate}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateBooking",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ed8e8f16-b553-4bdc-87b3-d86514c3a590",
+								"exec": [
+									"pm.collectionVariables.set(\"price\", Number(pm.variables.replaceIn(\"{{$randomCreditCardMask}}\")));\r",
+									"pm.collectionVariables.set(\"firstName\", pm.variables.replaceIn(\"{{$randomFirstName}}\"));\r",
+									"pm.collectionVariables.set(\"lastName\", pm.variables.replaceIn(\"{{$randomLastName}}\"));\r",
+									"\r",
+									"const boolean = [false, true];\r",
+									"\r",
+									"const random = Math.floor(Math.random() * boolean.length);\r",
+									"pm.collectionVariables.set(\"boolean\", boolean[random])"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "af45b303-cec2-4ae2-8e8f-5bb34d10f7e3",
+								"exec": [
+									"const response = pm.response.json();\r",
+									"const updateBookingSchema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"firstname\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"lastname\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"totalprice\": {\r",
+									"            \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"depositpaid\": {\r",
+									"            \"type\": \"boolean\"\r",
+									"        },\r",
+									"        \"bookingdates\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"properties\": {\r",
+									"                \"checkin\": {\r",
+									"                    \"type\": \"string\"\r",
+									"                },\r",
+									"                \"checkout\": {\r",
+									"                    \"type\": \"string\"\r",
+									"                }\r",
+									"            },\r",
+									"            \"required\": [\r",
+									"                \"checkin\",\r",
+									"                \"checkout\"\r",
+									"            ]\r",
+									"        },\r",
+									"        \"additionalneeds\": {\r",
+									"            \"type\": \"string\"\r",
+									"        }\r",
+									"    },\r",
+									"    \"required\": [\r",
+									"        \"firstname\",\r",
+									"        \"lastname\",\r",
+									"        \"totalprice\",\r",
+									"        \"depositpaid\",\r",
+									"        \"bookingdates\",\r",
+									"        \"additionalneeds\"\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Schema validation\", function () {\r",
+									"    pm.response.to.have.jsonSchema(updateBookingSchema);\r",
+									"});\r",
+									"\r",
+									"let price = pm.collectionVariables.get(\"price\");\r",
+									"let boolean = pm.collectionVariables.get(\"boolean\");\r",
+									"let firstName = pm.collectionVariables.get(\"firstName\");\r",
+									"let lastName = pm.collectionVariables.get(\"lastName\");\r",
+									"\r",
+									"\r",
+									"let field = [\r",
+									"    \"firstname\",\r",
+									"    \"lastname\",\r",
+									"    \"totalprice\",\r",
+									"    \"depositpaid\",\r",
+									"];\r",
+									"\r",
+									"let fieldvalue = [\r",
+									"    firstName,\r",
+									"    lastName,\r",
+									"    price,\r",
+									"    boolean\r",
+									"];\r",
+									"\r",
+									"for (let fieldArray in field){\r",
+									"    pm.test(`Check field ${field[fieldArray]}`, function(){\r",
+									"        pm.expect(response[field[fieldArray]]).to.equals(fieldvalue[fieldArray])\r",
+									"    });\r",
+									"};"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true,
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "token={{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\" : \"{{firstName}}\",\r\n    \"lastname\" : \"{{lastName}}\",\r\n    \"totalprice\" : {{price}},\r\n    \"depositpaid\" : {{boolean}},\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2018-01-01\",\r\n        \"checkout\" : \"2019-01-01\"\r\n    },\r\n    \"additionalneeds\" : \"Breakfast\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/booking/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"booking",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{bookIdCreate}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PartialUpdateBooking",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "255dbdbd-8b51-4c0e-85ad-e23d892a6332",
+								"exec": [
+									"pm.collectionVariables.set(\"firstName\", pm.variables.replaceIn(\"{{$randomFirstName}}\"));\r",
+									"pm.collectionVariables.set(\"lastName\", pm.variables.replaceIn(\"{{$randomLastName}}\"));\r",
+									"pm.collectionVariables.set(\"price\", Number(pm.variables.replaceIn(\"{{$randomCreditCardMask}}\")));"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "7099a286-44a6-4073-9560-5a317e6fc50e",
+								"exec": [
+									"const response = pm.response.json();\r",
+									"const updateBookingSchema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"firstname\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"lastname\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"totalprice\": {\r",
+									"            \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"depositpaid\": {\r",
+									"            \"type\": \"boolean\"\r",
+									"        },\r",
+									"        \"bookingdates\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"properties\": {\r",
+									"                \"checkin\": {\r",
+									"                    \"type\": \"string\"\r",
+									"                },\r",
+									"                \"checkout\": {\r",
+									"                    \"type\": \"string\"\r",
+									"                }\r",
+									"            },\r",
+									"            \"required\": [\r",
+									"                \"checkin\",\r",
+									"                \"checkout\"\r",
+									"            ]\r",
+									"        },\r",
+									"        \"additionalneeds\": {\r",
+									"            \"type\": \"string\"\r",
+									"        }\r",
+									"    },\r",
+									"    \"required\": [\r",
+									"        \"firstname\",\r",
+									"        \"lastname\",\r",
+									"        \"totalprice\",\r",
+									"        \"depositpaid\",\r",
+									"        \"bookingdates\",\r",
+									"        \"additionalneeds\"\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Schema validation\", function () {\r",
+									"    pm.response.to.have.jsonSchema(updateBookingSchema);\r",
+									"});\r",
+									"\r",
+									"let price = pm.collectionVariables.get(\"price\");\r",
+									"let firstName = pm.collectionVariables.get(\"firstName\");\r",
+									"let lastName = pm.collectionVariables.get(\"lastName\");\r",
+									"\r",
+									"\r",
+									"let field = [\r",
+									"    \"firstname\",\r",
+									"    \"lastname\",\r",
+									"    \"totalprice\",\r",
+									"];\r",
+									"\r",
+									"let fieldvalue = [\r",
+									"    firstName,\r",
+									"    lastName,\r",
+									"    price,\r",
+									"];\r",
+									"\r",
+									"for (let fieldArray in field){\r",
+									"    pm.test(`Check field ${field[fieldArray]}`, function(){\r",
+									"        pm.expect(response[field[fieldArray]]).to.equals(fieldvalue[fieldArray])\r",
+									"    });\r",
+									"};"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true,
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\" : \"{{firstName}}\",\r\n    \"lastname\" : \"{{lastName}}\",\r\n    \"totalprice\" : {{price}}\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/booking/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"booking",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{bookIdCreate}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b6d927e8-5238-4786-87aa-705bd7935059",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "53fb59c4-514a-4464-881d-eb51c72130c9",
+						"type": "text/javascript",
+						"exec": [
+							"//Check response status code sama dengan 200",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"//Check response time dibawah 200 ms",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "TestScript code 201",
+			"item": [
+				{
+					"name": " DeleteBooking",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a57a8a42-6218-436f-bf49-50285cde553c",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/booking/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"booking",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{bookIdCreate}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HealthCheck",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4ea402f7-cbbf-493f-b1b7-15480f7b48bf",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/ping",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7cedc42b-237d-4f89-9101-08210b2c159b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b855061-865e-4344-98b1-7e4a35259463",
+						"type": "text/javascript",
+						"exec": [
+							"//Check response status code sama dengan 200",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"//Check response time dibawah 200 ms",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "TestScript code 404",
+			"item": [
+				{
+					"name": "GetBooking (Check id after delete)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b6f40080-cbaf-492e-8996-2d59e808d831",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/booking/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"booking",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{bookIdCreate}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a8a18ecc-d395-47ca-bcd8-77cdc1670f57",
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Created By Gilang Romadhan\")"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9d2fe319-115d-400e-9829-f4cdff330b91",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "2771dbac-ca8d-4448-8bab-92f2bfb46f10",
+			"key": "token",
+			"value": "60c5157687682b9"
+		},
+		{
+			"id": "73e6f724-5368-445a-a60a-98af9d4c678f",
+			"key": "bookId",
+			"value": 10
+		},
+		{
+			"id": "9d919b77-04f3-4e4d-988e-6ee14f9d7fa6",
+			"key": "bookIdCreate",
+			"value": 11
+		},
+		{
+			"id": "36997294-8e9b-4987-97ed-e7ab736dab20",
+			"key": "username",
+			"value": "admin"
+		},
+		{
+			"id": "4a55fb50-fd09-4c7b-8c21-bb3a0eae420f",
+			"key": "password",
+			"value": "password123"
+		},
+		{
+			"id": "273fae46-d2b7-4d2f-81cb-4894b48f2aa3",
+			"key": "price",
+			"value": 9332
+		},
+		{
+			"id": "1d0d7fcd-77f8-4658-b247-6445473dcb32",
+			"key": "boolean",
+			"value": true
+		},
+		{
+			"id": "6c64f9fd-e755-4b4b-92c7-3d00b89b2408",
+			"key": "firstName",
+			"value": "Krystal"
+		},
+		{
+			"id": "551d2fb4-51be-449c-8007-755d5b418c19",
+			"key": "lastName",
+			"value": "Murray"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

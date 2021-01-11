@@ -44,6 +44,21 @@
       "createdAt": "2020-04-21T13:37:23.217Z",
       "updatedAt": "2020-04-21T13:37:23.217Z",
       "id": 5
+    },
+    {
+      "title": "You Are WHat You Love: THe Spiritual Power of Habit",
+      "author": "James K.A Smith",
+      "isbn": "158743380X",
+      "releaseDate": "2016-03-05",
+      "createdAt": "2021-01-11T02:25:26.426Z",
+      "updatedAt": "2021-01-11T02:25:26.426Z",
+      "id": 6,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/books/6"
+        }
+      ]
     }
   ],
   "households": [
@@ -52,6 +67,258 @@
       "createdAt": "2020-04-21T13:39:26.162Z",
       "updatedAt": "2020-04-21T13:39:26.162Z",
       "id": 1
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T02:10:25.520Z",
+      "updatedAt": "2021-01-11T02:10:25.520Z",
+      "id": 2,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/2"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T02:12:05.563Z",
+      "updatedAt": "2021-01-11T02:12:05.563Z",
+      "id": 3,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/3"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T02:17:27.292Z",
+      "updatedAt": "2021-01-11T02:17:27.292Z",
+      "id": 4,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/4"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T02:17:58.814Z",
+      "updatedAt": "2021-01-11T02:17:58.814Z",
+      "id": 5,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/5"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T02:21:51.344Z",
+      "updatedAt": "2021-01-11T02:21:51.344Z",
+      "id": 6,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/6"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T02:25:09.113Z",
+      "updatedAt": "2021-01-11T02:25:09.113Z",
+      "id": 7,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/7"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T02:25:25.848Z",
+      "updatedAt": "2021-01-11T02:25:25.848Z",
+      "id": 8,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/8"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T03:36:39.462Z",
+      "updatedAt": "2021-01-11T03:36:39.462Z",
+      "id": 9,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/9"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T04:49:12.357Z",
+      "updatedAt": "2021-01-11T04:49:12.357Z",
+      "id": 10,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/10"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T04:49:31.944Z",
+      "updatedAt": "2021-01-11T04:49:31.944Z",
+      "id": 11,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/11"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T04:50:05.965Z",
+      "updatedAt": "2021-01-11T04:50:05.965Z",
+      "id": 12,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/12"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T04:50:31.515Z",
+      "updatedAt": "2021-01-11T04:50:31.515Z",
+      "id": 13,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/13"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T04:51:20.293Z",
+      "updatedAt": "2021-01-11T04:51:20.293Z",
+      "id": 14,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/14"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T04:55:37.325Z",
+      "updatedAt": "2021-01-11T04:55:37.325Z",
+      "id": 15,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/15"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T04:58:16.999Z",
+      "updatedAt": "2021-01-11T04:58:16.999Z",
+      "id": 16,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/16"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T04:59:15.567Z",
+      "updatedAt": "2021-01-11T04:59:15.567Z",
+      "id": 17,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/17"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T05:00:08.830Z",
+      "updatedAt": "2021-01-11T05:00:08.830Z",
+      "id": 18,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/18"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T06:27:22.102Z",
+      "updatedAt": "2021-01-11T06:27:22.102Z",
+      "id": 19,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/19"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T06:27:48.535Z",
+      "updatedAt": "2021-01-11T06:27:48.535Z",
+      "id": 20,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/20"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T06:28:46.790Z",
+      "updatedAt": "2021-01-11T06:28:46.790Z",
+      "id": 21,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/21"
+        }
+      ]
+    },
+    {
+      "name": "Taylor Households",
+      "createdAt": "2021-01-11T06:39:10.636Z",
+      "updatedAt": "2021-01-11T06:39:10.636Z",
+      "id": 22,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/households/22"
+        }
+      ]
     }
   ],
   "users": [
@@ -68,6 +335,729 @@
         {
           "rel": "self",
           "href": "http://localhost:3000/users/1"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan94@gmail.com",
+      "firstName": "Gilang",
+      "lastName": "Romadhan",
+      "householdId": 1,
+      "createdAt": "2021-01-11T02:04:15.050Z",
+      "updatedAt": "2021-01-11T02:04:15.050Z",
+      "wishlistId": 2,
+      "id": 2,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/2"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan94@gmail.com",
+      "firstName": "Gilang",
+      "lastName": "Romadhan",
+      "householdId": 3,
+      "createdAt": "2021-01-11T02:13:22.523Z",
+      "updatedAt": "2021-01-11T02:13:22.523Z",
+      "wishlistId": 3,
+      "id": 3,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/3"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Revan",
+      "lastName": "Naufal",
+      "householdId": 3,
+      "createdAt": "2021-01-11T02:13:39.688Z",
+      "updatedAt": "2021-01-11T02:13:39.688Z",
+      "wishlistId": 4,
+      "id": 4,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/4"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan94@gmail.com",
+      "firstName": "Gilang",
+      "lastName": "Romadhan",
+      "householdId": 3,
+      "createdAt": "2021-01-11T02:16:10.724Z",
+      "updatedAt": "2021-01-11T02:16:10.724Z",
+      "wishlistId": 5,
+      "id": 5,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/5"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan94@gmail.com",
+      "firstName": "Gilang",
+      "lastName": "Romadhan",
+      "householdId": 4,
+      "createdAt": "2021-01-11T02:17:27.416Z",
+      "updatedAt": "2021-01-11T02:17:27.416Z",
+      "wishlistId": 6,
+      "id": 6,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/6"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Revan",
+      "lastName": "Naufal",
+      "householdId": 6,
+      "createdAt": "2021-01-11T02:17:27.534Z",
+      "updatedAt": "2021-01-11T02:17:27.534Z",
+      "wishlistId": 7,
+      "id": 7,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/7"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan94@gmail.com",
+      "firstName": "Gilang",
+      "lastName": "Romadhan",
+      "householdId": 5,
+      "createdAt": "2021-01-11T02:17:58.902Z",
+      "updatedAt": "2021-01-11T02:17:58.902Z",
+      "wishlistId": 8,
+      "id": 8,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/8"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Revan",
+      "lastName": "Naufal",
+      "householdId": 8,
+      "createdAt": "2021-01-11T02:17:58.996Z",
+      "updatedAt": "2021-01-11T02:17:58.996Z",
+      "wishlistId": 9,
+      "id": 9,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/9"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan94@gmail.com",
+      "firstName": "Gilang",
+      "lastName": "Romadhan",
+      "householdId": 6,
+      "createdAt": "2021-01-11T02:22:07.781Z",
+      "updatedAt": "2021-01-11T02:22:07.781Z",
+      "wishlistId": 10,
+      "id": 10,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/10"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Revan",
+      "lastName": "Naufal",
+      "householdId": 6,
+      "createdAt": "2021-01-11T02:22:31.283Z",
+      "updatedAt": "2021-01-11T02:22:31.283Z",
+      "wishlistId": 11,
+      "id": 11,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/11"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan94@gmail.com",
+      "firstName": "Gilang",
+      "lastName": "Romadhan",
+      "householdId": 7,
+      "createdAt": "2021-01-11T02:25:09.208Z",
+      "updatedAt": "2021-01-11T02:25:09.208Z",
+      "wishlistId": 12,
+      "id": 12,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/12"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Revan",
+      "lastName": "Naufal",
+      "householdId": 7,
+      "createdAt": "2021-01-11T02:25:09.348Z",
+      "updatedAt": "2021-01-11T02:25:09.348Z",
+      "wishlistId": 13,
+      "id": 13,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/13"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan94@gmail.com",
+      "firstName": "Gilang",
+      "lastName": "Romadhan",
+      "householdId": 8,
+      "createdAt": "2021-01-11T02:25:25.943Z",
+      "updatedAt": "2021-01-11T02:25:25.943Z",
+      "wishlistId": 14,
+      "id": 14,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/14"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Revan",
+      "lastName": "Naufal",
+      "householdId": 8,
+      "createdAt": "2021-01-11T02:25:26.094Z",
+      "updatedAt": "2021-01-11T02:25:26.094Z",
+      "wishlistId": 15,
+      "id": 15,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/15"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan94@gmail.com",
+      "firstName": "Gilang",
+      "lastName": "Romadhan",
+      "householdId": 8,
+      "createdAt": "2021-01-11T02:48:35.221Z",
+      "updatedAt": "2021-01-11T02:48:35.221Z",
+      "wishlistId": 16,
+      "id": 16,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/16"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan94@gmail.com",
+      "firstName": "Gilang",
+      "lastName": "Romadhan",
+      "householdId": 8,
+      "createdAt": "2021-01-11T02:49:13.811Z",
+      "updatedAt": "2021-01-11T02:49:13.811Z",
+      "wishlistId": 17,
+      "id": 17,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/17"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Revan",
+      "lastName": "Naufal",
+      "householdId": 8,
+      "createdAt": "2021-01-11T02:50:05.974Z",
+      "updatedAt": "2021-01-11T02:50:05.974Z",
+      "wishlistId": 18,
+      "id": 18,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/18"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan3@gmail.com",
+      "firstName": "Gilang3",
+      "lastName": "Romadhan3",
+      "householdId": 9,
+      "createdAt": "2021-01-11T04:24:10.428Z",
+      "updatedAt": "2021-01-11T04:24:10.428Z",
+      "wishlistId": 19,
+      "id": 19,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/19"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan3@gmail.com",
+      "firstName": "Gilang3",
+      "lastName": "Romadhan3",
+      "householdId": 9,
+      "createdAt": "2021-01-11T04:25:31.913Z",
+      "updatedAt": "2021-01-11T04:25:31.913Z",
+      "wishlistId": 20,
+      "id": 20,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/20"
+        }
+      ]
+    },
+    {
+      "email": "cs@mailinator.com",
+      "firstName": "C.S.",
+      "lastName": "Lewis",
+      "householdId": 15,
+      "createdAt": "2021-01-11T04:55:37.442Z",
+      "updatedAt": "2021-01-11T04:55:37.442Z",
+      "wishlistId": 21,
+      "id": 21,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/21"
+        }
+      ]
+    },
+    {
+      "email": "jon@mailinator.com",
+      "firstName": "Jonathan",
+      "lastName": "Edwards",
+      "householdId": 15,
+      "createdAt": "2021-01-11T04:55:37.550Z",
+      "updatedAt": "2021-01-11T04:55:37.550Z",
+      "wishlistId": 22,
+      "id": 22,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/22"
+        }
+      ]
+    },
+    {
+      "email": "jon@mailinator.com",
+      "firstName": "Jonathan",
+      "lastName": "Edwards",
+      "householdId": 16,
+      "createdAt": "2021-01-11T04:58:17.117Z",
+      "updatedAt": "2021-01-11T04:58:17.117Z",
+      "wishlistId": 23,
+      "id": 23,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/23"
+        }
+      ]
+    },
+    {
+      "email": "jon@mailinator.com",
+      "firstName": "Jonathan",
+      "lastName": "Edwards",
+      "householdId": 16,
+      "createdAt": "2021-01-11T04:58:17.215Z",
+      "updatedAt": "2021-01-11T04:58:17.215Z",
+      "wishlistId": 24,
+      "id": 24,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/24"
+        }
+      ]
+    },
+    {
+      "email": "charles@mailinator.com",
+      "firstName": "Charles",
+      "lastName": "Spurgeon",
+      "householdId": 17,
+      "createdAt": "2021-01-11T04:59:15.686Z",
+      "updatedAt": "2021-01-11T04:59:15.686Z",
+      "wishlistId": 25,
+      "id": 25,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/25"
+        }
+      ]
+    },
+    {
+      "email": "charles@mailinator.com",
+      "firstName": "Charles",
+      "lastName": "Spurgeon",
+      "householdId": 17,
+      "createdAt": "2021-01-11T04:59:15.800Z",
+      "updatedAt": "2021-01-11T04:59:15.800Z",
+      "wishlistId": 26,
+      "id": 26,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/26"
+        }
+      ]
+    },
+    {
+      "email": "cs@mailinator.com",
+      "firstName": "C.S.",
+      "lastName": "Lewis",
+      "householdId": 18,
+      "createdAt": "2021-01-11T05:00:08.949Z",
+      "updatedAt": "2021-01-11T05:00:08.949Z",
+      "wishlistId": 27,
+      "id": 27,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/27"
+        }
+      ]
+    },
+    {
+      "email": "charles@mailinator.com",
+      "firstName": "Charles",
+      "lastName": "Spurgeon",
+      "householdId": 18,
+      "createdAt": "2021-01-11T05:00:09.061Z",
+      "updatedAt": "2021-01-11T05:00:09.061Z",
+      "wishlistId": 28,
+      "id": 28,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/28"
+        }
+      ]
+    },
+    {
+      "email": "taylonr@gmail.com",
+      "firstName": "Nate",
+      "lastName": "Taylor",
+      "householdId": 21,
+      "createdAt": "2021-01-11T06:28:46.893Z",
+      "updatedAt": "2021-01-11T06:28:46.893Z",
+      "wishlistId": 29,
+      "id": 29,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/29"
+        }
+      ]
+    },
+    {
+      "email": "jon@mailinator.com",
+      "firstName": "Jonathan",
+      "lastName": "Edwards",
+      "householdId": 21,
+      "createdAt": "2021-01-11T06:28:46.990Z",
+      "updatedAt": "2021-01-11T06:28:46.990Z",
+      "wishlistId": 30,
+      "id": 30,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/30"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan2@gmail.com",
+      "firstName": "Gilang2",
+      "lastName": "Romadhan2",
+      "householdId": 21,
+      "createdAt": "2021-01-11T06:31:30.836Z",
+      "updatedAt": "2021-01-11T06:31:30.836Z",
+      "wishlistId": 31,
+      "id": 31,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/31"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan2@gmail.com",
+      "firstName": "Gilang2",
+      "lastName": "Romadhan2",
+      "householdId": 21,
+      "createdAt": "2021-01-11T06:32:16.263Z",
+      "updatedAt": "2021-01-11T06:32:16.263Z",
+      "wishlistId": 32,
+      "id": 32,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/32"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan2@gmail.com",
+      "firstName": "Gilang2",
+      "lastName": "Romadhan2",
+      "householdId": 22,
+      "createdAt": "2021-01-11T06:39:10.751Z",
+      "updatedAt": "2021-01-11T06:39:10.751Z",
+      "wishlistId": 33,
+      "id": 33,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/33"
+        }
+      ]
+    },
+    {
+      "email": "gilangromadhan4@gmail.com",
+      "firstName": "Gilang4",
+      "lastName": "Romadhan4",
+      "householdId": 22,
+      "createdAt": "2021-01-11T06:39:10.856Z",
+      "updatedAt": "2021-01-11T06:39:10.856Z",
+      "wishlistId": 34,
+      "id": 34,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/34"
+        }
+      ]
+    },
+    {
+      "email": "gilang@gmail.com",
+      "firstName": "Gilang",
+      "lastName:": "Romadhan",
+      "createdAt": "2021-01-11T07:02:01.572Z",
+      "updatedAt": "2021-01-11T07:02:01.572Z",
+      "wishlistId": 35,
+      "id": 35,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/35"
+        }
+      ]
+    },
+    {
+      "email": "gilang@gmail.com",
+      "firstName": "Gilang",
+      "lastName:": "Romadhan",
+      "createdAt": "2021-01-11T07:02:48.613Z",
+      "updatedAt": "2021-01-11T07:02:48.613Z",
+      "wishlistId": 36,
+      "id": 36,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/36"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Gilang",
+      "lastName:": "Romadhan",
+      "createdAt": "2021-01-11T07:04:21.929Z",
+      "updatedAt": "2021-01-11T07:06:17.086Z",
+      "wishlistId": 37,
+      "id": 37,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/37"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Gilang",
+      "lastName:": "Romadhan",
+      "createdAt": "2021-01-11T07:06:35.496Z",
+      "updatedAt": "2021-01-11T07:06:37.752Z",
+      "wishlistId": 38,
+      "id": 38,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/38"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Gilang",
+      "lastName:": "Romadhan",
+      "createdAt": "2021-01-11T07:07:34.239Z",
+      "updatedAt": "2021-01-11T07:07:34.360Z",
+      "wishlistId": 39,
+      "id": 39,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/39"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Gilang",
+      "lastName:": "Romadhan",
+      "createdAt": "2021-01-11T07:08:14.776Z",
+      "updatedAt": "2021-01-11T07:08:14.900Z",
+      "wishlistId": 40,
+      "id": 40,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/40"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Gilang",
+      "lastName:": "Romadhan",
+      "createdAt": "2021-01-11T07:08:35.358Z",
+      "updatedAt": "2021-01-11T07:09:20.460Z",
+      "wishlistId": 41,
+      "id": 41,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/41"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Gilang",
+      "lastName:": "Romadhan",
+      "createdAt": "2021-01-11T07:09:41.892Z",
+      "updatedAt": "2021-01-11T07:09:42.001Z",
+      "wishlistId": 42,
+      "id": 42,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/42"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Gilang",
+      "lastName:": "Romadhan",
+      "createdAt": "2021-01-11T07:10:51.641Z",
+      "updatedAt": "2021-01-11T07:10:51.784Z",
+      "wishlistId": 43,
+      "id": 43,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/43"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Gilang",
+      "lastName:": "Romadhan",
+      "createdAt": "2021-01-11T07:11:18.413Z",
+      "updatedAt": "2021-01-11T07:13:15.939Z",
+      "wishlistId": 44,
+      "id": 44,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/44"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Gilang",
+      "lastName": "Romadhan",
+      "createdAt": "2021-01-11T07:13:40.349Z",
+      "updatedAt": "2021-01-11T07:14:02.306Z",
+      "wishlistId": 45,
+      "id": 45,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/45"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Gilang",
+      "lastName": "Romadhan",
+      "createdAt": "2021-01-11T07:15:38.564Z",
+      "updatedAt": "2021-01-11T07:15:38.668Z",
+      "wishlistId": 46,
+      "id": 46,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/46"
+        }
+      ]
+    },
+    {
+      "email": "taylonr@gmail.com",
+      "firstName": "Nate",
+      "lastName": "Taylor",
+      "createdAt": "2021-01-11T07:20:29.235Z",
+      "updatedAt": "2021-01-11T07:20:29.301Z",
+      "wishlistId": 47,
+      "id": 47,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3000/users/47"
         }
       ]
     }
@@ -93,6 +1083,270 @@
         1
       ],
       "id": 1
+    },
+    {
+      "name": "Gilang's List",
+      "books": [
+        2
+      ],
+      "id": 2
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 3
+    },
+    {
+      "name": "Revan's List",
+      "books": [],
+      "id": 4
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 5
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 6
+    },
+    {
+      "name": "Revan's List",
+      "books": [],
+      "id": 7
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 8
+    },
+    {
+      "name": "Revan's List",
+      "books": [],
+      "id": 9
+    },
+    {
+      "name": "Gilang's List",
+      "books": [
+        1
+      ],
+      "id": 10
+    },
+    {
+      "name": "Revan's List",
+      "books": [
+        2,
+        1
+      ],
+      "id": 11
+    },
+    {
+      "name": "Gilang's List",
+      "books": [
+        1
+      ],
+      "id": 12
+    },
+    {
+      "name": "Revan's List",
+      "books": [
+        1
+      ],
+      "id": 13
+    },
+    {
+      "name": "Gilang's List",
+      "books": [
+        1
+      ],
+      "id": 14
+    },
+    {
+      "name": "Revan's List",
+      "books": [
+        1,
+        2
+      ],
+      "id": 15
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 16
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 17
+    },
+    {
+      "name": "Revan's List",
+      "books": [],
+      "id": 18
+    },
+    {
+      "name": "Gilang3's List",
+      "books": [],
+      "id": 19
+    },
+    {
+      "name": "Gilang3's List",
+      "books": [],
+      "id": 20
+    },
+    {
+      "name": "C.S.'s List",
+      "books": [
+        1
+      ],
+      "id": 21
+    },
+    {
+      "name": "Jonathan's List",
+      "books": [
+        1
+      ],
+      "id": 22
+    },
+    {
+      "name": "Jonathan's List",
+      "books": [],
+      "id": 23
+    },
+    {
+      "name": "Jonathan's List",
+      "books": [
+        1
+      ],
+      "id": 24
+    },
+    {
+      "name": "Charles's List",
+      "books": [],
+      "id": 25
+    },
+    {
+      "name": "Charles's List",
+      "books": [],
+      "id": 26
+    },
+    {
+      "name": "C.S.'s List",
+      "books": [
+        1
+      ],
+      "id": 27
+    },
+    {
+      "name": "Charles's List",
+      "books": [
+        1
+      ],
+      "id": 28
+    },
+    {
+      "name": "Nate's List",
+      "books": [
+        1
+      ],
+      "id": 29
+    },
+    {
+      "name": "Jonathan's List",
+      "books": [
+        1
+      ],
+      "id": 30
+    },
+    {
+      "name": "Gilang2's List",
+      "books": [],
+      "id": 31
+    },
+    {
+      "name": "Gilang2's List",
+      "books": [],
+      "id": 32
+    },
+    {
+      "name": "Gilang2's List",
+      "books": [
+        1
+      ],
+      "id": 33
+    },
+    {
+      "name": "Gilang4's List",
+      "books": [
+        1
+      ],
+      "id": 34
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 35
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 36
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 37
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 38
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 39
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 40
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 41
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 42
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 43
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 44
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 45
+    },
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 46
+    },
+    {
+      "name": "Nate's List",
+      "books": [],
+      "id": 47
     }
   ]
 }

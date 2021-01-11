@@ -8,11 +8,130 @@
       "isbn": "1593281056",
       "createdAt": "2020-03-27T00:00:00.000Z",
       "updatedAt": "2020-03-27T00:00:00.000Z"
+    },
+    {
+      "title": "You Are WHat You Love: THe Spiritual Power of Habit",
+      "author": "James K.A Smith",
+      "isbn": "158743380X",
+      "releaseDate": "2016-03-05",
+      "createdAt": "2020-12-31T13:37:09.448Z",
+      "updatedAt": "2020-12-31T13:37:09.448Z",
+      "id": 6,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3030/books/6"
+        }
+      ]
+    },
+    {
+      "title": "You Are WHat You Love: THe Spiritual Power of Habit",
+      "author": "James K.A Smith",
+      "isbn": "158743380X",
+      "releaseDate": "2016-03-05",
+      "createdAt": "2020-12-31T13:37:34.163Z",
+      "updatedAt": "2020-12-31T13:37:34.163Z",
+      "id": 7,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3030/books/7"
+        }
+      ]
+    },
+    {
+      "title": "You Are WHat You Love: THe Spiritual Power of Habit",
+      "author": "James K.A Smith",
+      "isbn": "158743380X",
+      "releaseDate": "2016-03-05",
+      "createdAt": "2020-12-31T13:38:01.956Z",
+      "updatedAt": "2020-12-31T13:38:01.956Z",
+      "id": 8,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3030/books/8"
+        }
+      ]
+    },
+    {
+      "title": "You Are WHat You Love: THe Spiritual Power of Habit",
+      "author": "James K.A Smith",
+      "isbn": "158743380X",
+      "releaseDate": "2016-03-05",
+      "createdAt": "2020-12-31T13:38:19.102Z",
+      "updatedAt": "2020-12-31T13:38:19.102Z",
+      "id": 9,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3030/books/9"
+        }
+      ]
     }
   ],
-  "households": [],
-  "users": [],
-  "wishlists": [],
+  "households": [
+    {
+      "name": "Taylor Households",
+      "createdAt": "2020-12-31T13:52:49.942Z",
+      "updatedAt": "2020-12-31T13:52:49.942Z",
+      "id": 1,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3030/households/1"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "email": "gilangromadhan94@gmail.com",
+      "firstName": "Gilang",
+      "lastName": "Romadhan",
+      "householdId": 1,
+      "createdAt": "2020-12-31T13:53:04.090Z",
+      "updatedAt": "2020-12-31T13:53:04.090Z",
+      "wishlistId": 1,
+      "id": 1,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3030/users/1"
+        }
+      ]
+    },
+    {
+      "email": "gromadhan@gmail.com",
+      "firstName": "Revan",
+      "lastName": "Naufal",
+      "householdId": 1,
+      "createdAt": "2020-12-31T13:57:00.548Z",
+      "updatedAt": "2020-12-31T13:57:00.548Z",
+      "wishlistId": 2,
+      "id": 2,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://localhost:3030/users/2"
+        }
+      ]
+    }
+  ],
+  "wishlists": [
+    {
+      "name": "Gilang's List",
+      "books": [],
+      "id": 1
+    },
+    {
+      "name": "Revan's List",
+      "books": [
+        2
+      ],
+      "id": 2
+    }
+  ],
   "accounts": [
     {
       "id": 1,

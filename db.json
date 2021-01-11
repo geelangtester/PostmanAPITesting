@@ -44,30 +44,6 @@
       "createdAt": "2020-04-21T13:37:23.217Z",
       "updatedAt": "2020-04-21T13:37:23.217Z",
       "id": 5
-    },
-    {
-      "title": "test",
-      "author": "tewst",
-      "isbn": "test",
-      "releaseDate": "test",
-      "createdAt": "2020-04-21T13:37:43.783Z",
-      "updatedAt": "2020-04-21T13:37:43.784Z",
-      "id": 6
-    },
-    {
-      "title": "test",
-      "author": "tewst",
-      "isbn": "test",
-      "releaseDate": "test",
-      "createdAt": "2020-04-21T13:39:10.238Z",
-      "updatedAt": "2020-04-21T13:39:10.238Z",
-      "id": 7,
-      "links": [
-        {
-          "rel": "self",
-          "href": "http://localhost:3000/books/7"
-        }
-      ]
     }
   ],
   "households": [
